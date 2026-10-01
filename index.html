@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSafe — Student Safety Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="logo">✦</div>
+
+            <div>
+                CampusSafe
+                <small>Student Safety Dashboard</small>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button class="icon-btn" id="themeBtn">☾</button>
+            <button class="icon-btn">🔔</button>
+            <button class="avatar">KS</button>
+        </div>
+
+    </header>
+
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="nav-title">Workspace</div>
+
+            <nav class="nav">
+
+                <button class="active">
+                    ⌂ <span>Overview</span>
+                </button>
+
+                <button>
+                    🚨 <span>Emergency</span>
+                </button>
+
+                <button>
+                    ⚠ <span>Report Issue</span>
+                </button>
+
+                <button>
+                    🔎 <span>Lost & Found</span>
+                </button>
+
+                <button>
+                    ✓ <span>Safety Checklist</span>
+                </button>
+
+            </nav>
+
+
+            <div class="side-card">
+
+                <b>Safety status</b>
+
+                <p>
+                    Your campus safety checklist is 75% complete.
+                    Keep emergency contacts updated.
+                </p>
+
+                <div class="progress">
+                    <i></i>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <section class="hero">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Good afternoon, Kanchan
+                    </div>
+
+                    <h1>
+                        Stay safe. Stay connected.
+                    </h1>
+
+                    <p>
+                        Everything you need for a safer campus experience,
+                        in one place.
+                    </p>
+
+                </div>
+
+                <div class="date" id="date"></div>
+
+            </section>
+
+
+            <!-- STAT CARDS -->
+            <section class="grid">
+
+                <div class="card stat">
+
+                    <div class="stat-top">
+                        <span>Emergency contacts</span>
+                        <div class="stat-icon">☎</div>
+                    </div>
+
+                    <h2>4</h2>
+
+                    <div class="trend">
+                        ● All verified
+                    </div>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <div class="stat-top">
+                        <span>Open reports</span>
+                        <div class="stat-icon">⚠</div>
+                    </div>
+
+                    <h2 id="reportCount">2</h2>
+
+                    <div class="trend warning">
+                        2 awaiting review
+                    </div>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <div class="stat-top">
+                        <span>Lost & found</span>
+                        <div class="stat-icon">⌕</div>
+                    </div>
+
+                    <h2>8</h2>
+
+                    <div class="trend">
+                        +3 this week
+                    </div>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <div class="stat-top">
+                        <span>Checklist</span>
+                        <div class="stat-icon">✓</div>
+                    </div>
+
+                    <h2 id="checkCount">3/4</h2>
+
+                    <div class="trend">
+                        75% complete
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="content">
+
+                <!-- QUICK ACTIONS -->
+                <div class="card panel">
+
+                    <div class="panel-head">
+                        <h3>Quick actions</h3>
+                        <span>Fast access</span>
+                    </div>
+
+
+                    <div class="quick">
+
+                        <button data-modal="emergency">
+
+                            <div class="qicon">🚨</div>
+
+                            <b>Emergency</b>
+
+                            <small>
+                                Contact campus help
+                            </small>
+
+                        </button>
+
+
+                        <button data-modal="report">
+
+                            <div class="qicon">⚠️</div>
+
+                            <b>Report an issue</b>
+
+                            <small>
+                                Submit a safety concern
+                            </small>
+
+                        </button>
+
+
+                        <button data-modal="found">
+
+                            <div class="qicon">🔎</div>
+
+                            <b>Lost & found</b>
+
+                            <small>
+                                Search reported items
+                            </small>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        💡
+
+                        <span>
+                            <b>Safety tip:</b>
+                            Save your campus security number and keep
+                            location sharing available when travelling alone.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+                <div class="card panel">
+
+                    <div class="panel-head">
+                        <h3>Recent activity</h3>
+                        <span>Live dashboard</span>
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>Library floor issue</strong>
+                            <small>Reported 28 min ago</small>
+                        </div>
+
+                        <span class="pill pending">
+                            Reviewing
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>ID card found</strong>
+                            <small>Student centre · 1 hr ago</small>
+                        </div>
+
+                        <span class="pill ok">
+                            Resolved
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>Emergency contact check</strong>
+                            <small>Updated today</small>
+                        </div>
+
+                        <span class="pill ok">
+                            Complete
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOST AND FOUND -->
+                <div class="card panel">
+
+                    <div class="panel-head">
+                        <h3>Lost & found</h3>
+                        <span>8 active items</span>
+                    </div>
+
+
+                    <div class="search">
+
+                        <input
+                            id="search"
+                            placeholder="Search items..."
+                        >
+
+                        <button
+                            class="mini-btn"
+                            id="clear"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <div id="items">
+
+                        <div class="lost-item">
+
+                            <div class="lost-left">
+
+                                <div class="lost-icon">
+                                    🎧
+                                </div>
+
+                                <div>
+                                    <b>Wireless headphones</b>
+                                    <small>
+                                        Computer Lab · Sep 30
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <button class="mini-btn">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <div class="lost-item">
+
+                            <div class="lost-left">
+
+                                <div class="lost-icon">
+                                    📚
+                                </div>
+
+                                <div>
+                                    <b>Blue notebook</b>
+                                    <small>
+                                        Library · Sep 29
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <button class="mini-btn">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <div class="lost-item">
+
+                            <div class="lost-left">
+
+                                <div class="lost-icon">
+                                    🔑
+                                </div>
+
+                                <div>
+                                    <b>Keychain</b>
+                                    <small>
+                                        Parking area · Sep 28
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <button class="mini-btn">
+                                View
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAFETY CHECKLIST -->
+                <div class="card panel">
+
+                    <div class="panel-head">
+
+                        <h3>Safety checklist</h3>
+
+                        <span id="checkLabel">
+                            3 of 4 done
+                        </span>
+
+                    </div>
+
+
+                    <label class="check">
+                        <input type="checkbox" checked>
+                        Emergency contacts are saved
+                    </label>
+
+
+                    <label class="check">
+                        <input type="checkbox" checked>
+                        Campus security number is known
+                    </label>
+
+
+                    <label class="check">
+                        <input type="checkbox" checked>
+                        Student ID is accessible
+                    </label>
+
+
+                    <label class="check">
+                        <input type="checkbox">
+                        Personal emergency plan is updated
+                    </label>
+
+
+                    <div
+                        class="progress checklist-progress"
+                    >
+                        <i id="progress"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="footer-note">
+
+                CampusSafe is a student project prototype •
+                Built with HTML, CSS & JavaScript •
+                Data stored locally in browser
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <h3 id="modalTitle">
+            Report an issue
+        </h3>
+
+        <p id="modalDesc">
+            Submit a campus safety concern.
+        </p>
+
+        <div id="modalFields"></div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary"
+                id="close"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="danger"
+                id="submit"
+            >
+                Submit
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
